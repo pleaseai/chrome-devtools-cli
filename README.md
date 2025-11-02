@@ -6,7 +6,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
-CLI wrapper for [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) - Control and inspect Chrome with command-line tools.
+**chrome-devtools-cli** lets you control and inspect a live Chrome browser from the command line. It provides direct CLI access to the full power of Chrome DevTools for reliable automation, in-depth debugging, and performance analysis - perfect for developers, scripts, and CI/CD pipelines.
+
+> Inspired by [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp), this CLI tool provides similar browser automation capabilities with **superior token efficiency** (~58.9% reduction via TOON format) - ideal for LLM-powered automation workflows.
 
 ## Features
 
@@ -35,6 +37,7 @@ brew install pleaseai/tap/chrome-devtools-cli
 ```
 
 Update:
+
 ```bash
 brew upgrade chrome-devtools-cli
 ```
@@ -383,6 +386,7 @@ chrome-devtools nav list-pages --format toon
 #### Step 1: Start Chrome with Remote Debugging
 
 **macOS:**
+
 ```bash
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --remote-debugging-port=9222 \
@@ -390,6 +394,7 @@ chrome-devtools nav list-pages --format toon
 ```
 
 **Linux:**
+
 ```bash
 /usr/bin/google-chrome \
   --remote-debugging-port=9222 \
@@ -397,6 +402,7 @@ chrome-devtools nav list-pages --format toon
 ```
 
 **Windows:**
+
 ```bash
 "C:\Program Files\Google\Chrome\Application\chrome.exe" ^
   --remote-debugging-port=9222 ^
@@ -504,7 +510,7 @@ chrome-devtools emulate resize --width 375 --height 667
 
 ## Architecture
 
-This CLI wraps the [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) functionality using:
+This CLI provides browser automation capabilities using:
 
 - **[Puppeteer](https://pptr.dev/)** - Browser automation
 - **[Commander.js](https://github.com/tj/commander.js)** - CLI framework
@@ -538,11 +544,11 @@ The CLI can also be used programmatically:
 ```typescript
 import {
   click,
-  navigatePage,
-  takeScreenshot,
-  performanceAnalyzeInsight,
-  getBrowser,
   closeBrowser,
+  getBrowser,
+  navigatePage,
+  performanceAnalyzeInsight,
+  takeScreenshot,
 } from '@pleaseai/chrome-devtools-cli'
 
 // Navigate to a page
@@ -565,17 +571,18 @@ await closeBrowser()
 
 ## Comparison with Chrome DevTools MCP
 
-| Feature | Chrome DevTools MCP | Chrome DevTools CLI |
-|---------|-------------------|-------------------|
-| Interface | MCP Server | CLI Commands |
-| Usage | AI Assistants (Claude, Copilot) | Command Line / Scripts |
-| Output Format | MCP Protocol | JSON / TOON / Text |
-| Browser Control | ✅ | ✅ |
-| Performance Analysis | ✅ | ✅ |
-| Network Inspection | ✅ | ✅ |
-| Debugging Tools | ✅ | ✅ |
-| Automation Scripts | ❌ | ✅ |
-| Programmatic API | ❌ | ✅ |
+| Feature              | Chrome DevTools MCP             | Chrome DevTools CLI         |
+| -------------------- | ------------------------------- | --------------------------- |
+| Interface            | MCP Server                      | CLI Commands                |
+| Usage                | AI Assistants (Claude, Copilot) | Command Line / Scripts      |
+| Output Format        | MCP Protocol                    | JSON / TOON / Text          |
+| Token Efficiency     | Standard                        | **~58.9% reduction (TOON)** |
+| Browser Control      | ✅                              | ✅                          |
+| Performance Analysis | ✅                              | ✅                          |
+| Network Inspection   | ✅                              | ✅                          |
+| Debugging Tools      | ✅                              | ✅                          |
+| Automation Scripts   | ❌                              | ✅                          |
+| Programmatic API     | ❌                              | ✅                          |
 
 ## Requirements
 
@@ -593,7 +600,7 @@ MIT © PleaseAI
 
 ## Credits
 
-This project wraps the excellent [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) by Google LLC.
+This project is inspired by the excellent [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) by Google LLC.
 
 ## Related Projects
 

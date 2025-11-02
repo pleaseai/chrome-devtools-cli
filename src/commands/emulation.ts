@@ -2,9 +2,9 @@
  * Emulation commands
  */
 
-import { getPage } from '../browser/index.js'
 import type { EmulateOptions } from '../types.js'
 import { KnownDevices } from 'puppeteer'
+import { getPage } from '../browser/index.js'
 
 export async function emulate(options: EmulateOptions): Promise<void> {
   const page = await getPage()

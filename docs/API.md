@@ -471,17 +471,17 @@ interface EmulateOptions {
 
 ```typescript
 import {
-  getBrowser,
-  navigatePage,
-  startNetworkMonitoring,
-  startConsoleMonitoring,
-  fill,
   click,
-  waitFor,
-  takeScreenshot,
-  listNetworkRequests,
-  listConsoleMessages,
   closeBrowser,
+  fill,
+  getBrowser,
+  listConsoleMessages,
+  listNetworkRequests,
+  navigatePage,
+  startConsoleMonitoring,
+  startNetworkMonitoring,
+  takeScreenshot,
+  waitFor,
 } from '@pleaseai/chrome-devtools-cli'
 
 async function automateLogin() {

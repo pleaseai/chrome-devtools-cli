@@ -10,7 +10,5 @@ export default antfu({
   },
   rules: {
     'no-console': 'off',
-    'node/prefer-global/process': 'off',
-    'ts/consistent-type-imports': 'error',
   },
 })

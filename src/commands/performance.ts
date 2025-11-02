@@ -2,8 +2,9 @@
  * Performance analysis commands
  */
 
-import { getPage } from '../browser/index.js'
+import type { Buffer } from 'node:buffer'
 import type { PerformanceOptions } from '../types.js'
+import { getPage } from '../browser/index.js'
 
 let isTracingActive = false
 let traceData: any = null

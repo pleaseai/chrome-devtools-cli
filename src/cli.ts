@@ -3,17 +3,17 @@
  * CLI entry point for Chrome DevTools CLI
  */
 
-import { Command } from 'commander'
-import { outputData, outputJson, outputToon } from '@pleaseai/cli-toolkit'
 import type { OutputFormat } from '@pleaseai/cli-toolkit'
+import process from 'node:process'
+import { outputData } from '@pleaseai/cli-toolkit'
+import { Command } from 'commander'
+import { closeBrowser } from './browser/index.js'
+import * as debugging from './commands/debugging.js'
+import * as emulation from './commands/emulation.js'
 import * as input from './commands/input.js'
 import * as navigation from './commands/navigation.js'
-import * as emulation from './commands/emulation.js'
-import * as performance from './commands/performance.js'
 import * as network from './commands/network.js'
-import * as debugging from './commands/debugging.js'
-import { closeBrowser, getBrowser } from './browser/index.js'
-import type { BrowserOptions } from './types.js'
+import * as performance from './commands/performance.js'
 
 const program = new Command()
 

@@ -94,6 +94,7 @@ chrome-devtools-cli/
 ## Installation Methods
 
 1. **Homebrew** (Recommended)
+
    ```bash
    brew tap pleaseai/tap
    brew install chrome-devtools-cli
@@ -114,13 +115,13 @@ chrome-devtools-cli/
 
 ### vs Chrome DevTools MCP
 
-| Feature | MCP Server | CLI |
-|---------|-----------|-----|
-| Interface | MCP Protocol | CLI Commands |
-| Target Users | AI Assistants | Developers/Scripts |
-| Output | MCP Format | JSON/TOON/Text |
-| Automation | Limited | Full Support |
-| Programmatic API | No | Yes |
+| Feature          | MCP Server    | CLI                |
+| ---------------- | ------------- | ------------------ |
+| Interface        | MCP Protocol  | CLI Commands       |
+| Target Users     | AI Assistants | Developers/Scripts |
+| Output           | MCP Format    | JSON/TOON/Text     |
+| Automation       | Limited       | Full Support       |
+| Programmatic API | No            | Yes                |
 
 ### Advantages
 
@@ -136,6 +137,7 @@ chrome-devtools-cli/
 ### Testing Phase
 
 1. **Manual Testing**
+
    ```bash
    cd chrome-devtools-cli
    bun install
@@ -172,6 +174,7 @@ chrome-devtools-cli/
 ### Release Process
 
 1. **Create Release**
+
    ```bash
    # Update version
    vim package.json
@@ -192,6 +195,7 @@ chrome-devtools-cli/
    ```
 
 2. **Update Homebrew**
+
    ```bash
    # Update formula
    ./scripts/update-formula.sh
@@ -227,6 +231,7 @@ chrome-devtools-cli/
 ### Future Enhancements
 
 **Phase 2** (v0.2.0):
+
 - [ ] Add interactive mode
 - [ ] Add session recording/playback
 - [ ] Add plugin system
@@ -234,6 +239,7 @@ chrome-devtools-cli/
 - [ ] Add more device presets
 
 **Phase 3** (v0.3.0):
+
 - [ ] Add visual testing features
 - [ ] Add accessibility testing
 - [ ] Add lighthouse integration
@@ -241,6 +247,7 @@ chrome-devtools-cli/
 - [ ] Add parallel execution
 
 **Phase 4** (v1.0.0):
+
 - [ ] Add CI/CD integration examples
 - [ ] Add Docker support
 - [ ] Add cloud browser support
@@ -252,6 +259,7 @@ chrome-devtools-cli/
 We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 Areas where help is needed:
+
 - Testing on different platforms
 - Documentation improvements
 - Bug fixes

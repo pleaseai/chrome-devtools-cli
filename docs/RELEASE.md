@@ -84,6 +84,7 @@ git push origin main
 ### 2. Release PR Created
 
 release-please will automatically:
+
 - Create a PR titled "chore(main): release X.X.X"
 - Update version in `package.json`
 - Update `CHANGELOG.md`
@@ -92,6 +93,7 @@ release-please will automatically:
 ### 3. Review and Merge
 
 Review the release PR:
+
 - Check version number is correct
 - Review CHANGELOG.md entries
 - Verify all commits are included
@@ -212,6 +214,7 @@ Settings > Secrets and variables > Actions > New repository secret
 ### 2. Formula Will Be Auto-Created
 
 The release workflow automatically:
+
 - Creates `chrome-devtools-cli.rb` in the tap
 - Updates checksums
 - Commits and pushes
@@ -325,5 +328,6 @@ After release:
 ## Support
 
 For release issues:
+
 - [GitHub Issues](https://github.com/pleaseai/chrome-devtools-cli/issues)
 - [release-please Documentation](https://github.com/googleapis/release-please)

@@ -3,8 +3,8 @@
  */
 
 import type { Browser, Page } from 'puppeteer'
-import puppeteer from 'puppeteer'
 import type { BrowserOptions } from '../types.js'
+import puppeteer from 'puppeteer'
 
 let browser: Browser | null = null
 let currentPage: Page | null = null

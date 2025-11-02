@@ -2,9 +2,10 @@
  * Debugging commands
  */
 
-import { getPage } from '../browser/index.js'
-import type { ScreenshotOptions } from '../types.js'
+import type { Buffer } from 'node:buffer'
 import type { ConsoleMessage } from 'puppeteer'
+import type { ScreenshotOptions } from '../types.js'
+import { getPage } from '../browser/index.js'
 
 interface ConsoleMessageData {
   id: string

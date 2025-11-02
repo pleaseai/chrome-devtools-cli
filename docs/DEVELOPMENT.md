@@ -184,6 +184,7 @@ bun run build
 ```
 
 This:
+
 1. Compiles TypeScript to JavaScript using Bun
 2. Outputs to `dist/` directory
 3. Creates separate bundles for cli, index, browser, and commands
@@ -195,6 +196,7 @@ bun run build:prod
 ```
 
 This:
+
 1. Compiles source to standalone executable
 2. Minifies and optimizes code
 3. Includes bytecode compilation
@@ -207,6 +209,7 @@ This:
 ```
 
 This:
+
 1. Builds binaries for all platforms:
    - macOS ARM64
    - macOS x64
@@ -262,6 +265,7 @@ footer
 ```
 
 Types:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -271,6 +275,7 @@ Types:
 - `chore`: Maintenance
 
 Examples:
+
 ```bash
 git commit -m "feat(nav): add wait-for-selector command"
 git commit -m "fix(input): handle missing elements gracefully"
@@ -337,6 +342,7 @@ bun --inspect src/cli.ts ...
 ### GitHub Actions
 
 We use GitHub Actions for:
+
 - CI on every push/PR (`.github/workflows/ci.yml`)
 - Release builds on tags (`.github/workflows/release.yml`)
 

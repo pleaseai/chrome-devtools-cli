@@ -2,8 +2,8 @@
  * Navigation automation commands
  */
 
-import { closePage as browserClosePage, getPage, listPages as browserListPages, newPage as browserNewPage, selectPage as browserSelectPage } from '../browser/index.js'
 import type { NavigateOptions } from '../types.js'
+import { closePage as browserClosePage, listPages as browserListPages, newPage as browserNewPage, selectPage as browserSelectPage, getPage } from '../browser/index.js'
 
 export async function listPages(): Promise<any[]> {
   const pages = await browserListPages()
@@ -44,7 +44,7 @@ export async function waitFor(params: {
   }
   else if (params.text) {
     await page.waitForFunction(
-      text => document.body.innerText.includes(text),
+      text => document.body.textContent?.includes(text),
       { timeout: params.timeout },
       params.text,
     )

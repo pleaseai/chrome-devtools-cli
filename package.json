@@ -15,14 +15,14 @@
     "debugging",
     "browser"
   ],
-  "bin": {
-    "chrome-devtools": "./dist/cli.js"
-  },
   "exports": {
     ".": "./dist/index.js"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "chrome-devtools": "./dist/cli.js"
+  },
   "files": [
     "LICENSE",
     "README.md",
@@ -31,6 +31,9 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=23"
   },
   "scripts": {
     "prebuild": "rm -rf dist",
@@ -48,10 +51,10 @@
   },
   "dependencies": {
     "@pleaseai/cli-toolkit": "^0.2.0",
-    "commander": "^12.1.0",
-    "puppeteer": "^24.27.0",
     "chrome-devtools-frontend": "^1.0.1536371",
+    "commander": "^12.1.0",
     "debug": "^4.4.3",
+    "puppeteer": "^24.27.0",
     "yargs": "^18.0.0"
   },
   "devDependencies": {
@@ -63,10 +66,8 @@
     "@types/node": "^24.3.3",
     "@types/yargs": "^17.0.33",
     "eslint": "^9.20.0",
+    "eslint-plugin-format": "^1.0.2",
     "husky": "^9.1.7",
     "typescript": "^5.9.3"
-  },
-  "engines": {
-    "node": "^20.19.0 || ^22.12.0 || >=23"
   }
 }

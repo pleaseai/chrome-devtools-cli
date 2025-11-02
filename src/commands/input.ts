@@ -2,8 +2,8 @@
  * Input automation commands
  */
 
-import { getPage } from '../browser/index.js'
 import type { ClickOptions, FillOptions } from '../types.js'
+import { getPage } from '../browser/index.js'
 
 export async function click(options: ClickOptions): Promise<void> {
   const page = await getPage()

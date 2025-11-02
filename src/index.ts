@@ -6,6 +6,6 @@
  * @module chrome-devtools-cli
  */
 
-export * from './commands/index.js'
 export * from './browser/index.js'
+export * from './commands/index.js'
 export type * from './types.js'

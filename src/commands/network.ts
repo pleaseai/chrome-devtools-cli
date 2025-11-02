@@ -2,8 +2,8 @@
  * Network inspection commands
  */
 
-import { getPage } from '../browser/index.js'
 import type { HTTPRequest, HTTPResponse } from 'puppeteer'
+import { getPage } from '../browser/index.js'
 
 interface NetworkRequest {
   id: string

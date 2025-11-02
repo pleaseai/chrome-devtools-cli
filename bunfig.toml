@@ -1,5 +1,3 @@
 [test]
 # Exclude submodule tests
-exclude = [
-  "references/**/*"
-]
+exclude = [ "references/**/*" ]
