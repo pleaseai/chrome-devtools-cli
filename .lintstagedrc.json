@@ -1,0 +1,9 @@
+{
+  "*.{js,ts,tsx,jsx}": [
+    "eslint --fix",
+    "bun test --bail --findRelatedTests"
+  ],
+  "*.{json,md,yml,yaml}": [
+    "eslint --fix"
+  ]
+}
