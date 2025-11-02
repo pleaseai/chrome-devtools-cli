@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/@pleaseai%2Fchrome-devtools-cli.svg)](https://badge.fury.io/js/@pleaseai%2Fchrome-devtools-cli)
 [![CI](https://github.com/pleaseai/chrome-devtools-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/pleaseai/chrome-devtools-cli/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/github/pleaseai/chrome-devtools-cli/graph/badge.svg?token=CODECOV_TOKEN)](https://codecov.io/github/pleaseai/chrome-devtools-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
