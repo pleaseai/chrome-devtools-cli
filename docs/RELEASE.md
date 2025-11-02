@@ -149,15 +149,44 @@ The release workflow requires the following GitHub secrets:
 
 ### Required Secrets
 
-1. **NPM_TOKEN**: npm authentication token
-   - Get from https://www.npmjs.com/settings/tokens
-   - Create "Automation" token
+1. **APP_ID**: GitHub App ID
+   - Create GitHub App at https://github.com/organizations/pleaseai/settings/apps
+   - Copy the App ID
    - Add to GitHub repository secrets
 
-2. **GH_PAT**: GitHub Personal Access Token
-   - Create at https://github.com/settings/tokens
-   - Needs `repo` and `workflow` scopes
-   - Required for updating homebrew-tap repository
+2. **PRIVATE_KEY**: GitHub App Private Key
+   - In GitHub App settings, generate a private key
+   - Download the `.pem` file
+   - Add the entire contents to GitHub repository secrets
+
+3. **NPM_TOKEN**: npm authentication token
+   - Get from https://www.npmjs.com/settings/tokens
+   - Create "Automation" token with "Publish" permission
+   - Add to GitHub repository secrets
+
+### GitHub App Setup
+
+1. **Create GitHub App**
+   - Go to https://github.com/organizations/pleaseai/settings/apps
+   - Click "New GitHub App"
+   - Name: "release-please-bot" (or similar)
+   - Homepage URL: https://github.com/pleaseai
+   - Uncheck "Webhook" > "Active"
+
+2. **Set Permissions**
+   - Repository permissions:
+     - Contents: Read and write
+     - Pull requests: Read and write
+     - Metadata: Read-only
+
+3. **Install App**
+   - Install on repositories:
+     - chrome-devtools-cli
+     - homebrew-tap
+
+4. **Get Credentials**
+   - App ID: On app page
+   - Private Key: Generate and download
 
 ### Setting Secrets
 
@@ -166,8 +195,9 @@ The release workflow requires the following GitHub secrets:
 Settings > Secrets and variables > Actions > New repository secret
 
 # Add:
+# - APP_ID: (your GitHub App ID)
+# - PRIVATE_KEY: (paste entire .pem file contents)
 # - NPM_TOKEN: (your npm token)
-# - GH_PAT: (your GitHub PAT)
 ```
 
 ## Homebrew Tap Setup

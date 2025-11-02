@@ -4,6 +4,7 @@
       "release-type": "node",
       "package-name": "@pleaseai/chrome-devtools-cli",
       "include-component-in-tag": false,
+      "include-v-in-tag": true,
       "changelog-sections": [
         {
           "type": "feat",
