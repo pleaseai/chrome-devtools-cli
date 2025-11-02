@@ -1,7 +1,9 @@
 # Chrome DevTools CLI
 
-[![npm version](https://img.shields.io/npm/v/@pleaseai/chrome-devtools-cli.svg)](https://www.npmjs.com/package/@pleaseai/chrome-devtools-cli)
+[![npm version](https://badge.fury.io/js/@pleaseai%2Fchrome-devtools-cli.svg)](https://badge.fury.io/js/@pleaseai%2Fchrome-devtools-cli)
+[![CI](https://github.com/pleaseai/chrome-devtools-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/pleaseai/chrome-devtools-cli/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
 
 CLI wrapper for [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) - Control and inspect Chrome with command-line tools.
 
