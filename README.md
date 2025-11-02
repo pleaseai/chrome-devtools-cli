@@ -42,19 +42,23 @@ Download pre-built binaries from [GitHub Releases](https://github.com/pleaseai/c
 
 ```bash
 # macOS (Apple Silicon)
-curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-cli-darwin-arm64.tar.gz | tar xz
+curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-darwin-arm64 -o chrome-devtools
+chmod +x chrome-devtools
 sudo mv chrome-devtools /usr/local/bin/
 
 # macOS (Intel)
-curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-cli-darwin-x64.tar.gz | tar xz
+curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-darwin-x64 -o chrome-devtools
+chmod +x chrome-devtools
 sudo mv chrome-devtools /usr/local/bin/
 
 # Linux (ARM64)
-curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-cli-linux-arm64.tar.gz | tar xz
+curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-linux-arm64 -o chrome-devtools
+chmod +x chrome-devtools
 sudo mv chrome-devtools /usr/local/bin/
 
 # Linux (x64)
-curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-cli-linux-x64.tar.gz | tar xz
+curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-linux-x64 -o chrome-devtools
+chmod +x chrome-devtools
 sudo mv chrome-devtools /usr/local/bin/
 ```
 
