@@ -44,7 +44,10 @@ export async function waitFor(params: {
   }
   else if (params.text) {
     await page.waitForFunction(
-      text => document.body.textContent?.includes(text),
+      (text: string) => {
+        // @ts-expect-error - document is available in browser context
+        return document.body.textContent?.includes(text)
+      },
       { timeout: params.timeout },
       params.text,
     )

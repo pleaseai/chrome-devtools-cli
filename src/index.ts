@@ -6,6 +6,6 @@
  * @module chrome-devtools-cli
  */
 
-export * from './browser/index.js'
+export { closeBrowser, getBrowser, getPage } from './browser/index.js'
 export * from './commands/index.js'
 export type * from './types.js'

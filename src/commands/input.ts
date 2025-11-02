@@ -2,6 +2,7 @@
  * Input automation commands
  */
 
+import type { KeyInput } from 'puppeteer'
 import type { ClickOptions, FillOptions } from '../types.js'
 import { getPage } from '../browser/index.js'
 
@@ -31,7 +32,7 @@ export async function fill(options: FillOptions): Promise<void> {
 
 export async function pressKey(key: string): Promise<void> {
   const page = await getPage()
-  await page.keyboard.press(key)
+  await page.keyboard.press(key as KeyInput)
 }
 
 export async function drag(fromUid: string, toUid: string): Promise<void> {

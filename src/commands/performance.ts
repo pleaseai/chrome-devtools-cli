@@ -56,9 +56,10 @@ export async function performanceAnalyzeInsight(options: PerformanceOptions = {}
 
   // Basic performance metrics
   const metrics = await page.metrics()
-  const performanceTiming = JSON.parse(
-    await page.evaluate(() => JSON.stringify(window.performance.timing)),
-  )
+  const performanceTiming = await page.evaluate(() => {
+    // @ts-expect-error - window is available in browser context
+    return window.performance.timing
+  })
 
   return {
     trace,

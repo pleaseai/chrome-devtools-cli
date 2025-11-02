@@ -10,7 +10,7 @@ export async function emulate(options: EmulateOptions): Promise<void> {
   const page = await getPage()
 
   if (options.device) {
-    const device = KnownDevices[options.device]
+    const device = KnownDevices[options.device as keyof typeof KnownDevices]
     if (!device) {
       throw new Error(`Unknown device: ${options.device}`)
     }
