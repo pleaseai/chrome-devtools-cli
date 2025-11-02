@@ -53,7 +53,7 @@ inputCmd
       console.log('Successfully clicked element')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -68,7 +68,7 @@ inputCmd
       console.log('Successfully hovered over element')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -84,7 +84,7 @@ inputCmd
       console.log('Successfully filled input')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -99,7 +99,7 @@ inputCmd
       console.log('Successfully pressed key')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -115,7 +115,7 @@ inputCmd
       console.log('Successfully dragged element')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -131,7 +131,7 @@ inputCmd
       console.log('Successfully uploaded file')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -147,7 +147,7 @@ inputCmd
       console.log('Dialog handler set')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -161,14 +161,14 @@ const navCmd = program.command('nav').description('Navigation commands')
 navCmd
   .command('list-pages')
   .description('List all open pages')
-  .action(async (options, command) => {
+  .action(async (_options, command) => {
     try {
       const pages = await navigation.listPages()
       const format = command.optsWithGlobals().format as OutputFormat
       outputData(pages, format)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -183,7 +183,7 @@ navCmd
       console.log(`Selected page ${options.index}`)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -198,7 +198,7 @@ navCmd
       console.log(`Closed page ${options.index}`)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -214,7 +214,7 @@ navCmd
       console.log('Created new page')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -230,7 +230,7 @@ navCmd
       console.log(`Navigated to ${options.url}`)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -251,7 +251,7 @@ navCmd
       console.log('Wait condition met')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -272,7 +272,7 @@ emulateCmd
       console.log(`Emulating device: ${options.name}`)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -288,7 +288,7 @@ emulateCmd
       console.log(`Resized to ${options.width}x${options.height}`)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -308,7 +308,7 @@ perfCmd
       console.log('Performance tracing started')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -329,7 +329,7 @@ perfCmd
       }
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -349,7 +349,7 @@ perfCmd
       outputData(result, format)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -383,7 +383,7 @@ netCmd
       outputData(requests, format)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -403,7 +403,7 @@ netCmd
       outputData(request, format)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -447,7 +447,7 @@ debugCmd
       outputData(messages, format)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -467,7 +467,7 @@ debugCmd
       outputData(message, format)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -491,7 +491,7 @@ debugCmd
       outputData(result, format)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -519,7 +519,7 @@ debugCmd
       }
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -534,7 +534,7 @@ debugCmd
       console.log(snapshot)
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
@@ -552,7 +552,7 @@ program
       console.log('Browser closed')
     }
     catch (error) {
-      console.error('Error:', error.message)
+      console.error('Error:', (error as Error).message)
       process.exit(1)
     }
   })
