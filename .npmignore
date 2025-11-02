@@ -1,0 +1,16 @@
+src/
+.git/
+.idea/
+.vscode/
+node_modules/
+*.log
+.env
+coverage/
+*.tsbuildinfo
+tsconfig.json
+eslint.config.js
+.gitignore
+.npmignore
+references/chrome-devtools-mcp/tests/
+references/chrome-devtools-mcp/scripts/
+references/chrome-devtools-mcp/.git/
