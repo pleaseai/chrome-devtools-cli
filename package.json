@@ -48,6 +48,8 @@
     "dev": "bun run src/cli.ts",
     "type-check": "tsc --noEmit",
     "test": "bun test",
+    "test:unit": "bun test test/unit",
+    "test:integration": "bun test test/integration",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "bun run dist/cli.js",

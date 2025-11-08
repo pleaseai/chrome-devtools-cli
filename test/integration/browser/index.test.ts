@@ -5,7 +5,7 @@
 import type { Browser, Page } from 'puppeteer'
 import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
 
-// Mock puppeteer
+// Mock browser and page objects
 const mockBrowser = {
   close: mock(() => Promise.resolve()),
   pages: mock(() => Promise.resolve([])),
@@ -19,6 +19,7 @@ const mockPage = {
   close: mock(() => Promise.resolve()),
 } as unknown as Page
 
+// Mock puppeteer module
 const mockPuppeteer = {
   launch: mock(() => Promise.resolve(mockBrowser)),
   connect: mock(() => Promise.resolve(mockBrowser)),
@@ -37,14 +38,13 @@ describe('browser module', () => {
 
   afterEach(async () => {
     // Clean up browser instance after each test
-    const { closeBrowser } = await import('../../src/browser/index.js')
+    const { closeBrowser } = await import('../../../src/browser/index.js')
     await closeBrowser()
   })
 
   describe('getBrowser', () => {
     it('should launch a new browser when none exists', async () => {
-      const { getBrowser } = await import('../../src/browser/index.js')
-
+      const { getBrowser } = await import('../../../src/browser/index.js')
       const browser = await getBrowser()
 
       expect(browser).toBeDefined()
@@ -52,8 +52,7 @@ describe('browser module', () => {
     })
 
     it('should return existing browser instance', async () => {
-      const { getBrowser } = await import('../../src/browser/index.js')
-
+      const { getBrowser } = await import('../../../src/browser/index.js')
       const browser1 = await getBrowser()
       const browser2 = await getBrowser()
 
@@ -62,7 +61,7 @@ describe('browser module', () => {
     })
 
     it('should connect to existing browser when wsEndpoint provided', async () => {
-      const { getBrowser, closeBrowser } = await import('../../src/browser/index.js')
+      const { getBrowser, closeBrowser } = await import('../../../src/browser/index.js')
       await closeBrowser()
 
       await getBrowser({ wsEndpoint: 'ws://localhost:9222' })
@@ -73,7 +72,7 @@ describe('browser module', () => {
     })
 
     it('should launch headless browser when headless option is true', async () => {
-      const { getBrowser, closeBrowser } = await import('../../src/browser/index.js')
+      const { getBrowser, closeBrowser } = await import('../../../src/browser/index.js')
       await closeBrowser()
 
       await getBrowser({ headless: true })
@@ -84,7 +83,7 @@ describe('browser module', () => {
     })
 
     it('should set viewport when provided', async () => {
-      const { getBrowser, closeBrowser } = await import('../../src/browser/index.js')
+      const { getBrowser, closeBrowser } = await import('../../../src/browser/index.js')
       await closeBrowser()
 
       await getBrowser({ viewport: '1920x1080' })
@@ -97,7 +96,7 @@ describe('browser module', () => {
     })
 
     it('should add proxy server to args when provided', async () => {
-      const { getBrowser, closeBrowser } = await import('../../src/browser/index.js')
+      const { getBrowser, closeBrowser } = await import('../../../src/browser/index.js')
       await closeBrowser()
 
       await getBrowser({ proxyServer: 'http://proxy.example.com:8080' })
@@ -110,7 +109,7 @@ describe('browser module', () => {
     })
 
     it('should ignore certificate errors when acceptInsecureCerts is true', async () => {
-      const { getBrowser, closeBrowser } = await import('../../src/browser/index.js')
+      const { getBrowser, closeBrowser } = await import('../../../src/browser/index.js')
       await closeBrowser()
 
       await getBrowser({ acceptInsecureCerts: true })
@@ -125,8 +124,7 @@ describe('browser module', () => {
 
   describe('closeBrowser', () => {
     it('should close browser and clear state', async () => {
-      const { getBrowser, closeBrowser } = await import('../../src/browser/index.js')
-
+      const { getBrowser, closeBrowser } = await import('../../../src/browser/index.js')
       mockBrowser.close.mockClear()
       await getBrowser()
       await closeBrowser()
@@ -135,14 +133,14 @@ describe('browser module', () => {
     })
 
     it('should not throw when no browser exists', async () => {
-      const { closeBrowser } = await import('../../src/browser/index.js')
-
+      const { closeBrowser } = await import('../../../src/browser/index.js')
       await expect(closeBrowser()).resolves.toBeUndefined()
     })
   })
 
   describe('getPage', () => {
     it('should return existing page when available', async () => {
+      const { getPage, closeBrowser } = await import('../../../src/browser/index.js')
       const mockBrowserWithPages = {
         ...mockBrowser,
         pages: mock(() => Promise.resolve([mockPage])),
@@ -150,7 +148,6 @@ describe('browser module', () => {
 
       mockPuppeteer.launch.mockResolvedValue(mockBrowserWithPages)
 
-      const { getPage, closeBrowser } = await import('../../src/browser/index.js')
       await closeBrowser()
 
       const page = await getPage()
@@ -159,6 +156,7 @@ describe('browser module', () => {
     })
 
     it('should create new page when none exist', async () => {
+      const { getPage, closeBrowser } = await import('../../../src/browser/index.js')
       const newMockPage = { ...mockPage }
       const mockBrowserNoPages = {
         ...mockBrowser,
@@ -168,7 +166,6 @@ describe('browser module', () => {
 
       mockPuppeteer.launch.mockResolvedValue(mockBrowserNoPages)
 
-      const { getPage, closeBrowser } = await import('../../src/browser/index.js')
       await closeBrowser()
 
       const page = await getPage()

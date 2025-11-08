@@ -25,7 +25,7 @@ const mockPage2 = {
 } as unknown as Page
 
 // Mock browser module
-mock.module('../../src/browser/index.js', () => ({
+mock.module('../../../src/browser/index.js', () => ({
   getPage: mock(() => Promise.resolve(mockPage)),
   listPages: mock(() => Promise.resolve([mockPage, mockPage2])),
   selectPage: mock((index: number) => {
@@ -53,7 +53,7 @@ describe('navigation commands', () => {
 
   describe('listPages', () => {
     it('should return list of pages with index, url, and title', async () => {
-      const { listPages } = await import('../../src/commands/navigation.js')
+      const { listPages } = await import('../../../src/commands/navigation.js')
 
       const pages = await listPages()
 
@@ -73,8 +73,8 @@ describe('navigation commands', () => {
 
   describe('selectPage', () => {
     it('should select page by index', async () => {
-      const { selectPage } = await import('../../src/commands/navigation.js')
-      const browserModule = await import('../../src/browser/index.js')
+      const { selectPage } = await import('../../../src/commands/navigation.js')
+      const browserModule = await import('../../../src/browser/index.js')
 
       await selectPage(1)
 
@@ -82,7 +82,7 @@ describe('navigation commands', () => {
     })
 
     it('should throw error for invalid index', async () => {
-      const { selectPage } = await import('../../src/commands/navigation.js')
+      const { selectPage } = await import('../../../src/commands/navigation.js')
 
       await expect(selectPage(999)).rejects.toThrow('out of range')
     })
@@ -90,8 +90,8 @@ describe('navigation commands', () => {
 
   describe('closePage', () => {
     it('should close page by index', async () => {
-      const { closePage } = await import('../../src/commands/navigation.js')
-      const browserModule = await import('../../src/browser/index.js')
+      const { closePage } = await import('../../../src/commands/navigation.js')
+      const browserModule = await import('../../../src/browser/index.js')
 
       await closePage(1)
 
@@ -99,7 +99,7 @@ describe('navigation commands', () => {
     })
 
     it('should throw error for invalid index', async () => {
-      const { closePage } = await import('../../src/commands/navigation.js')
+      const { closePage } = await import('../../../src/commands/navigation.js')
 
       await expect(closePage(-1)).rejects.toThrow('out of range')
     })
@@ -107,7 +107,7 @@ describe('navigation commands', () => {
 
   describe('newPage', () => {
     it('should create new page and navigate to URL', async () => {
-      const { newPage } = await import('../../src/commands/navigation.js')
+      const { newPage } = await import('../../../src/commands/navigation.js')
 
       await newPage('https://example.com')
 
@@ -115,7 +115,7 @@ describe('navigation commands', () => {
     })
 
     it('should create new page with custom timeout', async () => {
-      const { newPage } = await import('../../src/commands/navigation.js')
+      const { newPage } = await import('../../../src/commands/navigation.js')
 
       await newPage('https://example.com', 5000)
 
@@ -125,7 +125,7 @@ describe('navigation commands', () => {
 
   describe('navigatePage', () => {
     it('should navigate to URL', async () => {
-      const { navigatePage } = await import('../../src/commands/navigation.js')
+      const { navigatePage } = await import('../../../src/commands/navigation.js')
 
       await navigatePage({ url: 'https://example.com' })
 
@@ -133,7 +133,7 @@ describe('navigation commands', () => {
     })
 
     it('should navigate with custom timeout', async () => {
-      const { navigatePage } = await import('../../src/commands/navigation.js')
+      const { navigatePage } = await import('../../../src/commands/navigation.js')
 
       await navigatePage({ url: 'https://example.com', timeout: 10000 })
 
@@ -143,7 +143,7 @@ describe('navigation commands', () => {
 
   describe('waitFor', () => {
     it('should wait for selector', async () => {
-      const { waitFor } = await import('../../src/commands/navigation.js')
+      const { waitFor } = await import('../../../src/commands/navigation.js')
 
       await waitFor({ selector: '.my-element' })
 
@@ -151,7 +151,7 @@ describe('navigation commands', () => {
     })
 
     it('should wait for selector with timeout', async () => {
-      const { waitFor } = await import('../../src/commands/navigation.js')
+      const { waitFor } = await import('../../../src/commands/navigation.js')
 
       await waitFor({ selector: '.my-element', timeout: 3000 })
 
@@ -159,7 +159,7 @@ describe('navigation commands', () => {
     })
 
     it('should wait for text content', async () => {
-      const { waitFor } = await import('../../src/commands/navigation.js')
+      const { waitFor } = await import('../../../src/commands/navigation.js')
 
       await waitFor({ text: 'Hello World' })
 
@@ -171,7 +171,7 @@ describe('navigation commands', () => {
     })
 
     it('should wait for text with timeout', async () => {
-      const { waitFor } = await import('../../src/commands/navigation.js')
+      const { waitFor } = await import('../../../src/commands/navigation.js')
 
       await waitFor({ text: 'Hello World', timeout: 5000 })
 
