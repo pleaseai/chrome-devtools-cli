@@ -103,6 +103,24 @@ npm install @pleaseai/chrome-devtools-cli
 bun add @pleaseai/chrome-devtools-cli
 ```
 
+### Claude Code Plugin
+
+Install as a plugin for [Claude Code](https://claude.com) to get integrated skill documentation and automation support.
+
+#### Add Marketplace
+
+```bash
+/plugin marketplace add pleaseai/claude-code-plugins
+```
+
+#### Install Plugin
+
+```bash
+/plugin install chrome-devtools-cli@pleaseai
+```
+
+Once installed, access comprehensive usage skills directly within Claude Code with automated guidance for browser automation, debugging, and performance testing workflows.
+
 ## Quick Start
 
 ### Launch Chrome and Navigate
