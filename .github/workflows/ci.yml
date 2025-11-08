@@ -36,11 +36,11 @@ jobs:
       - name: Run linter
         run: bun run lint
 
-      - name: Run tests
-        run: bun test
+      - name: Run unit tests
+        run: bun run test:unit
 
       - name: Generate coverage report
-        run: bun test --coverage
+        run: bun run test:unit --coverage
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
