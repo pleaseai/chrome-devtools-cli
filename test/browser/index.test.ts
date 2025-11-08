@@ -30,7 +30,7 @@ mock.module('puppeteer', () => ({
 
 // Import AFTER mock is set up
 // eslint-disable-next-line import/first
-import { closeBrowser, getBrowser, getPage } from '../../src/browser/index.js'
+import { closeBrowser, getBrowser, getPage } from '../../src/browser/index.ts'
 
 describe('browser module', () => {
   beforeEach(() => {
