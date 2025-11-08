@@ -3,7 +3,7 @@
  */
 
 import type { Browser, Page } from 'puppeteer'
-import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, mock } from 'bun:test'
 
 // Mock puppeteer BEFORE importing the module under test
 const mockBrowser = {
@@ -28,11 +28,20 @@ mock.module('puppeteer', () => ({
   default: mockPuppeteer,
 }))
 
-// Import AFTER mock is set up
-// eslint-disable-next-line import/first
-import { closeBrowser, getBrowser, getPage } from '../../src/browser/index.ts'
+// Module exports loaded via dynamic import
+let getBrowser: any
+let closeBrowser: any
+let getPage: any
 
 describe('browser module', () => {
+  beforeAll(async () => {
+    // Import module after mock is set up
+    const module = await import('../../src/browser/index.ts')
+    getBrowser = module.getBrowser
+    closeBrowser = module.closeBrowser
+    getPage = module.getPage
+  })
+
   beforeEach(() => {
     // Reset mocks before each test
     mockPuppeteer.launch.mockClear()
