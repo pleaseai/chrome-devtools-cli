@@ -1,7 +1,7 @@
 {
   "name": "@pleaseai/chrome-devtools-cli",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "CLI wrapper for Chrome DevTools MCP - Control and inspect Chrome with command-line tools",
   "author": "PleaseAI",
   "license": "MIT",

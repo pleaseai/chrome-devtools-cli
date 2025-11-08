@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1](https://github.com/pleaseai/chrome-devtools-cli/compare/v0.3.0...v0.3.1) (2025-11-08)
+
+
+### 📄 Documentation
+
+* add Claude Code plugin installation instructions ([493a835](https://github.com/pleaseai/chrome-devtools-cli/commit/493a835c66219745664c69bd07944bd444d1fdc3))
+* add comprehensive Chrome DevTools CLI usage skill ([1020bfa](https://github.com/pleaseai/chrome-devtools-cli/commit/1020bfa739a7c23b85107167e56ae663b4ce0039))
+
 ## [0.3.0](https://github.com/pleaseai/chrome-devtools-cli/compare/v0.2.0...v0.3.0) (2025-11-08)
 
 
