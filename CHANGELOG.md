@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0](https://github.com/pleaseai/chrome-devtools-cli/compare/v0.2.0...v0.3.0) (2025-11-08)
+
+
+### 🎉 Features
+
+* add automated installation script with platform detection ([0e9f6c1](https://github.com/pleaseai/chrome-devtools-cli/commit/0e9f6c1a4697701eaacfe576ad9d52ccf0577fd4))
+
+
+### 🛠️ Fixes
+
+* add repository field to package.json for npm provenance validation ([a382234](https://github.com/pleaseai/chrome-devtools-cli/commit/a38223450a4885eda0e3e28f474a3a2e4d060f9a))
+
 ## [0.2.0](https://github.com/pleaseai/chrome-devtools-cli/compare/v0.1.0...v0.2.0) (2025-11-02)
 
 
