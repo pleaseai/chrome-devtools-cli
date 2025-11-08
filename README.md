@@ -46,6 +46,24 @@ brew upgrade chrome-devtools-cli
 
 Download pre-built binaries from [GitHub Releases](https://github.com/pleaseai/chrome-devtools-cli/releases):
 
+#### Quick Install (Recommended)
+
+Auto-detects your platform and architecture:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/pleaseai/chrome-devtools-cli/main/install.sh | bash
+```
+
+Or download and run the script manually:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/pleaseai/chrome-devtools-cli/main/install.sh -o install.sh
+chmod +x install.sh
+./install.sh
+```
+
+#### Manual Installation
+
 ```bash
 # macOS (Apple Silicon)
 curl -L https://github.com/pleaseai/chrome-devtools-cli/releases/latest/download/chrome-devtools-darwin-arm64 -o chrome-devtools
