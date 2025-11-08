@@ -1,16 +1,16 @@
 /**
  * Browser module tests
+ *
+ * Note: Puppeteer mocks are set up in test/setup.ts (preloaded via bunfig.toml)
  */
 
 import type { Browser, Page } from 'puppeteer'
 import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
+import { closeBrowser, getBrowser, getPage } from '../../src/browser/index.ts'
+import { mockBrowser as importedMockBrowser, mockPuppeteer } from '../setup.ts'
 
-// Mock puppeteer BEFORE importing the module under test
-const mockBrowser = {
-  close: mock(() => Promise.resolve()),
-  pages: mock(() => Promise.resolve([])),
-  newPage: mock(() => Promise.resolve({})),
-} as unknown as Browser
+// Use the preloaded mock browser
+const mockBrowser = importedMockBrowser
 
 const mockPage = {
   url: mock(() => 'about:blank'),
@@ -18,18 +18,6 @@ const mockPage = {
   bringToFront: mock(() => Promise.resolve()),
   close: mock(() => Promise.resolve()),
 } as unknown as Page
-
-const mockPuppeteer = {
-  launch: mock(() => Promise.resolve(mockBrowser)),
-  connect: mock(() => Promise.resolve(mockBrowser)),
-}
-
-mock.module('puppeteer', () => ({
-  default: mockPuppeteer,
-}))
-
-// Import module after mock setup using top-level await
-const { getBrowser, closeBrowser, getPage } = await import('../../src/browser/index.ts')
 
 describe('browser module', () => {
   beforeEach(() => {

@@ -1,3 +1,5 @@
 [test]
 # Exclude submodule tests
 exclude = [ "references/**/*" ]
+# Preload mocks before any test files
+preload = [ "./test/setup.ts" ]
