@@ -6,8 +6,8 @@
 
 import type { Browser, Page } from 'puppeteer'
 import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test'
-import { closeBrowser, getBrowser, getPage } from '../../src/browser/index.ts'
-import { mockBrowser as importedMockBrowser, mockPuppeteer } from '../setup.ts'
+import { closeBrowser, getBrowser, getPage } from '../../src/browser/index.js'
+import { mockBrowser as importedMockBrowser, mockPuppeteer } from '../setup.js'
 
 // Use the preloaded mock browser
 const mockBrowser = importedMockBrowser
