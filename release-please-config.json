@@ -19,7 +19,8 @@
       "include-component-in-tag": false,
       "include-v-in-tag": true,
       "extra-files": [
-        "README.md"
+        "README.md",
+        "plugin.json"
       ]
     }
   }
