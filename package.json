@@ -5,6 +5,10 @@
   "description": "CLI wrapper for Chrome DevTools MCP - Control and inspect Chrome with command-line tools",
   "author": "PleaseAI",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pleaseai/chrome-devtools-cli.git"
+  },
   "keywords": [
     "chrome",
     "devtools",
